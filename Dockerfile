@@ -45,4 +45,5 @@ ENV DATABASE_URL= \
 #ENV NPM_CONFIG_PRODUCTION=true \
 #    NODE_ENV=production
 
+
 CMD ["node", "./bin/server.js"]
