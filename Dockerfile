@@ -1,4 +1,4 @@
-FROM node:12.18.0-alpine
+FROM node:17.8.0-alpine
 
 EXPOSE 8080
 WORKDIR /usr/
@@ -20,17 +20,17 @@ ENV TZ=UTC \
 # By default console will use SqlLite file storage
 # NB!: It will clean on conatiner re-creation
 #      add volume or setup Postgres/Firebase ENV
-ENV DATABASE_URL= \
+#ENV DATABASE_URL= \
 # For Postgres SQL
 # ENV DATABASE_URL=postgres://<username>:<password>@<hostname>:<port>/<dbname>
 # Google Maps API Key for map
-  GOOGLE_MAPS_API_KEY=AIzaSyBb3oI9_2m9p6FMTxmqxQksUcOOJcxNgYw \
+#  GOOGLE_MAPS_API_KEY=\
 # Do you use it for a lot of organisation or users?
-  SHARED_DASHBOARD= \
+#  SHARED_DASHBOARD= \
 # Manage them in one account? http://host:9000/admin256
-  ADMIN_TOKEN= \
+#  ADMIN_TOKEN= \
 # Do you need auth?
-  PASSWORD=
+#  PASSWORD=
 
 # Firebase way as example
 # ENV FIREBASE_URL=https://geolocation-console.firebaseio.com
@@ -41,9 +41,11 @@ ENV DATABASE_URL= \
 #RUN NODE_ENV=production ./node_modules/.bin/webpack && \
 #    NPM_CONFIG_PRODUCTION=true npm prune --production && \
 #    npm i sqlite3
-#
+
 #ENV NPM_CONFIG_PRODUCTION=true \
 #    NODE_ENV=production
 
+ENV PORT=8080
 
-CMD ["node", "./bin/server.js"]
+#CMD ["node", "./bin/server.js"]
+CMD ["npm", "start"]
