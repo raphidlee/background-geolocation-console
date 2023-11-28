@@ -24,7 +24,7 @@ ENV DATABASE_URL= \
 # For Postgres SQL
 # ENV DATABASE_URL=postgres://<username>:<password>@<hostname>:<port>/<dbname>
 # Google Maps API Key for map
-  GOOGLE_MAPS_API_KEY=AI...vNkg \
+  GOOGLE_MAPS_API_KEY=AIzaSyBb3oI9_2m9p6FMTxmqxQksUcOOJcxNgYw \
 # Do you use it for a lot of organisation or users?
   SHARED_DASHBOARD= \
 # Manage them in one account? http://host:9000/admin256
@@ -38,11 +38,11 @@ ENV DATABASE_URL= \
 # ENV FIREBASE_PROJECT_ID=geolocation-console
 # ENV FIREBASE_CLIENT_EMAIL=geolocation-console@appspot.gserviceaccount.com
 
-RUN NODE_ENV=production ./node_modules/.bin/webpack && \
-    NPM_CONFIG_PRODUCTION=true npm prune --production && \
-    npm i sqlite3
-
-ENV NPM_CONFIG_PRODUCTION=true \
-    NODE_ENV=production
+#RUN NODE_ENV=production ./node_modules/.bin/webpack && \
+#    NPM_CONFIG_PRODUCTION=true npm prune --production && \
+#    npm i sqlite3
+#
+#ENV NPM_CONFIG_PRODUCTION=true \
+#    NODE_ENV=production
 
 CMD ["node", "./bin/server.js"]
